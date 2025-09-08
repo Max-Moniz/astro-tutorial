@@ -1,3 +1,7 @@
+No permission is granted to use any original works that exist in this project. This includes logos, pictures and
+original code. Below are dependencies licenses for which can be replicated as stated. I am granting no license to anyone for my works.
+
+
 AstroBuild
 -------------------------------
 MIT License
