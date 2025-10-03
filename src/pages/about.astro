@@ -2,8 +2,12 @@
 import "../styles/global.css";
 import HeaderNavBar from "../components/headerNavBar.astro";
 import Footer from "../components/footer.astro";
+import { getImage } from "astro:assets";
+import myBackground from "../../src/images/Background.jpg"
 
+const optimizedBackground = await getImage({src: myBackground, format: 'avif', alt:"",  height:1920, width:1080});
 import Logo from "../images/horizontal.svg";
+import { Image } from "astro:assets";
 ---
 
 <div style="
@@ -49,44 +53,45 @@ import Logo from "../images/horizontal.svg";
       >
     </div>
   </div>
-  <div style="flex: 1;justify-items: center;">
+  <div style={`flex: 1;justify-items: center;background-image: url(${optimizedBackground.src});background-repeat:no-repeat;background-size:cover;background-position-y: center;`}>
     <div
-      style="width:50%;margin: auto;padding: 20px;display: flex;flex-direction: column;gap: 20px; margin-top:40px; margin-bottom: 40px;"
+      style="width:70%;margin: auto;padding: 20px;display: flex;flex-direction: column;gap: 20px; margin-top:40px; margin-bottom: 40px;"
     >
       <div
-        style="font-size: 2em;font-weight: bold;padding: 20px;text-align: center"
+        style="color: white;font-size: 2em;font-weight: bold;padding: 20px;text-shadow: 0px 0px 6px black;"
       >
-        The Process
+        Welcome
       </div>
-      <div>
-        If you are thinking of setting out on your therapy journey, congrats! It
-        is an investment that will be so worthwhile. We all run into road
-        blocks, challenging times, unforeseen circumstances and painful times,
-        all of which can take a toll on us! Through the therapy process the goal
-        is that you will be able to recover and protect your mental peace and
-        well-being, gain tools to set you on a firm foundation for current or
-        future challenges, and uncover your strengths. Learn to become more
-        aware and in tune with your needs, how your experiences have shaped you
-        and what changes you want to make in your life.
-      </div>
-      <div>
-        If you are thinking of setting out on your therapy journey, congrats! It
-        is an investment that will be so worthwhile. We all run into road
-        blocks, challenging times, unforeseen circumstances and painful times,
-        all of which can take a toll on us! Through the therapy process the goal
-        is that you will be able to recover and protect your mental peace and
-        well-being, gain tools to set you on a firm foundation for current or
-        future challenges, and uncover your strengths. Learn to become more
-        aware and in tune with your needs, how your experiences have shaped you
-        and what changes you want to make in your life.
-      </div>
-      <div>
-        Therapy is not a passive process. It requires time, commitment and a
-        willingness to change. We will journey together to help you discover
-        your best path forward and feel more empowered in your life.
+      <div style="color: white;font-size: 1.5em;text-shadow: 0px 0px 6px black;padding: 20px;">
+        Give yourself permission to start your healing journey
       </div>
     </div>
   </div>
+
+  <div style="flex: 1;justify-items: center;">
+    <div
+      style="width:70%;margin: auto;padding: 20px;display: flex;flex-direction: column;gap: 20px; margin-top:40px; margin-bottom: 40px;"
+    >
+    <div style="text-shadow: 0px 0px 6px black;">
+      If you are thinking of setting out on your therapy journey, congrats! It
+      is an investment that will be so worthwhile. We all run into road
+      blocks, challenging times, unforeseen circumstances and painful times,
+      all of which can take a toll on us! Through the therapy process the goal
+      is that you will be able to recover and protect your mental peace and
+      well-being, gain tools to set you on a firm foundation for current or
+      future challenges, and uncover your strengths. Learn to become more
+      aware and in tune with your needs, how your experiences have shaped you
+      and what changes you want to make in your life.
+    </div>
+    <div style="text-shadow: 0px 0px 6px black;">
+      Therapy is not a passive process. It requires time, commitment and a
+      willingness to change. We will journey together to help you discover
+      your best path forward and feel more empowered in your life.
+    </div>
+    </div>
+  </div>
+
+
 
   <div style="flex: 1;justify-items: center;">
     <div
@@ -95,23 +100,7 @@ import Logo from "../images/horizontal.svg";
     <div
       style="margin: auto;padding: 20px;display: flex;flex-direction: column;gap: 20px; margin-top:40px"
     >
-      <div
-        style="font-size: 2em;font-weight: bold;padding: 20px;text-align: center"
-      >
-        Methodology
-      </div>
-      <ul>
-        <li>Cognitive Behavioral Therapy (CBT)</li>
-        <li>Dialectical Behavioral Therapy (DBT)</li>
-        <li>Mindfulness</li>
-        <li>Narrative Therapy</li>
-        <li>Exposure Therapy</li>
-        <li>Psychodynamic Therapy</li>
-        <li>Motivational Interviewing</li>
-        <li>Humanistic Therapy</li>
-        <li>Person-Centered Therapy</li>
-        <li>Acceptance and Commitment Therapy (ACT)</li>
-      </ul>
+      <!-- <Image src={myImportedImage} alt="Therapist" style="border-radius: 10px; max-width: 100%; height: auto; box-shadow: 0px 0px 10px rgba(0,0,0,0.5);" /> -->
     </div>
 	<div
 	style="margin: auto;padding: 20px;display: flex;flex-direction: column;gap: 20px; margin-top:40px"
